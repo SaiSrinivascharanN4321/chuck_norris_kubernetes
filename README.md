@@ -84,8 +84,7 @@ __(iii)__ Create a cluster
 
  copy the source files to your home directory
 
-- 
-Install Calico plugin 
+- Install Calico plugin 
 
 kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
 
@@ -95,3 +94,64 @@ kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
 kubectl get pods --all-namespaces
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
+
+
+---
+
+
+__Create namespace for nginx ingress and chuck norris api__
+
+Run the following bash scripts
+ 
+./deploy.sh
+
+./applications.sh
+
+
+
+
+
+__Requirements__
+
+golang 1.16
+
+
+
+__Execution__
+
+Run 
+
+sudo docker-compose up -d 
+
+to start the local development environment i.e. mysql; the backing service
+
+
+Run 
+
+SQL_PASSWORD=root make run 
+
+to run the application that serves on port 8080
+
+__Endpoints__
+
+- GET /banter returns a list of jokes
+
+- GET /health/live checks for the liveness of application
+
+- GET /health/ready checks for the readiness of application to accept traffic. 
+
+---
+
+__Idea of deployment__
+
+The idea of dpeloyment is to have 
+- Simple storage server i.e. MYSQL
+- REST API server that exposes /banter endpoint to retrieve list of all jokes from the storage server
+- Reverse proxy that serves the REST API server
+
+
+
+__Additional Ideas added but could not be executed__
+
+There are two files in additional_ideas and are python files. The inital idea was to use stateless api to act as a storage and also idea was to execute this python application with Dockerfile
+
