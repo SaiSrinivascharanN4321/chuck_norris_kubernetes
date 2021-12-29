@@ -158,4 +158,13 @@ __Additional Ideas added but could not be executed__
 
 There are two files in additional_ideas and are python files. The inital idea was to use stateless api to act as a storage and also idea was to execute this python application with Dockerfile
 
+
+__References__
+
+- https://github.com/ahmedwaleedmalik/chuck-norris-api
+
+- https://www.mirantis.com/blog/how-install-kubernetes-kubeadm/
+
+- https://itnext.io/bare-metal-kubernetes-with-kubeadm-nginx-ingress-controller-and-haproxy-bb0a7ef29d4e
+
 ---
