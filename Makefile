@@ -31,8 +31,8 @@ docker-build: test
 	docker build -t ${IMG} . --build-arg SERVE_PORT=$(SERVE_PORT)
 
 # Push docker image
-docker-push:
-	docker push ${IMG}
+#docker-push:
+#	docker push ${IMG}
 
 # Update image value in deployment
 update-deployment-image: 
@@ -48,7 +48,7 @@ release: docker-build docker-push update-deployment-image
 
 # Deploy latest changes to a cluster
 deploy:
-	bash scripts/deploy.sh
+	bash deploy.sh
 
 # Create a release and deploy latest changes to a cluster
 release-and-deploy: release deploy

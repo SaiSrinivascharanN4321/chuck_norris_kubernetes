@@ -16,37 +16,31 @@ STATEFULSET=mysql
 echo -e "\n========= Application deployment started ==========\n"
 
 
+kubectl create ns ingress-nginx
 
+#adding nginx ingress
+#kubectl -n ingress-nginx apply -f scripts/deploy.yaml
 
 # Wait till Ingress Controller is deployed
-kubectl wait --namespace ingress-nginx \
-  --for=condition=ready pod \
-  --selector=app.kubernetes.io/component=controller \
-  --timeout=150s
+sleep 30
 
 # Create namespace 
 kubectl create namespace $NAMESPACE || true
 
 # Create mysql statefulset
-kubectl -n $NAMESPACE apply -f deploy/mysql/
+#kubectl -n $NAMESPACE apply -f deploy/mysql/
 
 # Wait till statefulset is available
-kubectl wait -n $NAMESPACE \
-  --for=condition=ready pod \
-  --selector=app=mysql \
-  --timeout=150s
 
+sleep 20
 
 # Create application resources
-kubectl -n $NAMESPACE apply -f deploy/api/
+#kubectl -n $NAMESPACE apply -f deploy/api/
 
 # Wait till deployment is available
-kubectl wait -n $NAMESPACE \
-  --for=condition=ready pod \
-  --selector=app=chuck-norris-api \
-  --timeout=150s
+sleep 4
 
-echo -e "Application deployed"
+echo -e "namespace created and now its time to deploy applications"
 
 
 
