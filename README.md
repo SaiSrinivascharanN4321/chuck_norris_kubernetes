@@ -1,9 +1,12 @@
 ---
+
 __Install kubeadm__
 
 
 __(i)Preparing VM__
+
 - sudo su
+
 - swapoff -a
 
 - vi /etc/fstab
@@ -155,3 +158,4 @@ __Additional Ideas added but could not be executed__
 
 There are two files in additional_ideas and are python files. The inital idea was to use stateless api to act as a storage and also idea was to execute this python application with Dockerfile
 
+---
