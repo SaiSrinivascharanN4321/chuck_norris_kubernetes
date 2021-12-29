@@ -99,7 +99,7 @@ kubectl get pods --all-namespaces
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
 
----
+
 
 
 __Create namespace for nginx ingress and chuck norris api__
