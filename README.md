@@ -1,4 +1,4 @@
----
+
 
 __Install kubeadm__
 
@@ -143,7 +143,7 @@ __Endpoints__
 
 - GET /health/ready checks for the readiness of application to accept traffic. 
 
----
+
 
 __Idea of deployment__
 
@@ -167,4 +167,4 @@ __References__
 
 - https://itnext.io/bare-metal-kubernetes-with-kubeadm-nginx-ingress-controller-and-haproxy-bb0a7ef29d4e
 
----
+
