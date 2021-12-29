@@ -157,6 +157,9 @@ The idea of dpeloyment is to have
 __Additional Ideas added but could not be executed__
 
 There are two files in additional_ideas and are python files. The inital idea was to use stateless api to act as a storage and also idea was to execute this python application with Dockerfile
+  
+
+Please clone the repository and enter into it
 
 
 __References__
